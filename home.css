@@ -1,0 +1,74 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url(bg.jpg);
+  background-repeat: no-repeat ;
+  background-attachment: fixed;
+}
+/*
+This part of the stylesheet is to organise the website and make it look clean by
+ordering the images with the grid function.
+*/
+.frame{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+  justify-content: space-around;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.frame img{
+  display: grid;
+  object-fit: contain;
+  width: auto;
+  height: 400px;
+  margin: 0;
+  box-shadow: 0px 0px 15px 10px black;
+}
+
+.con{
+  position: relative;
+  width: auto;
+  height: 400px;
+}
+
+/*
+This part of the stylesheet is to add the function when you hover over an image
+it will lower the opacity of the image to 0.3 and at the same time display the
+name of the content.
+*/
+
+.overlay{
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+
+.img{
+  opacity: 1;
+}
+
+.text{
+  color:white;
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.con:hover .overlay{
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.con:hover .img{
+  opacity: 0.3;
+  transition: 0.5s ease-in-out;
+}
